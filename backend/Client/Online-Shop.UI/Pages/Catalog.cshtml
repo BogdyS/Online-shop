@@ -1,0 +1,114 @@
+﻿@page "/catalog"
+@model Online_Shop.UI.Pages.CatalogModel
+@{
+    ViewData["Title"] = "Каталог";
+}
+@section Styles {
+    <link href="@Url.Content("~/css/catalog.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/autocomplete.css")" rel="stylesheet" type="text/css" />
+}
+<div style="display: block; width:100%;">
+    <div class="search">
+        <form id="form" autocomplete="off">
+            <div class="autocomplete">
+                <input type="search"
+                       id="query"
+                       placeholder="Поиск в каталоге товаров"
+                       style="width: 500px; height: 50px; font-size: 20px;">
+
+                <button type="button" id="searchButton" style="height: 50px; width: 90px;">Поиск</button>
+            </div>
+        </form>
+    </div>
+    <div class="catalog">
+        <div class="filter">
+            <div class="filter_products">
+                <p>Каталог товаров</p>
+                <form id="categories" style="display:block;">
+                    @{
+                        for(int i = 0; i < 8; i++)
+                        {
+                            <label style="display:flex;">
+                                <input type="checkbox" name="select" />
+                                <div class="categories-sceleton"></div>
+                            </label>
+                        }
+                    }
+                    <br />
+                </form>
+            </div>
+            <p>Цена</p>
+            <div id="price" class="filter_price">
+
+                <form class="form-price">
+                    <label style="font-family:'Courier New', Courier, monospace; font-size: 20px; margin-bottom: 10px">
+                        Минимальная
+                    </label>
+                    <input id="min-price" class="input-price" type="number" placeholder="" style="font-family:'Courier New', Courier, monospace; font-size: 20px; margin-bottom: 20px">
+                    <label style="font-family:'Courier New', Courier, monospace; font-size: 20px; margin-bottom: 10px">
+                        Максимальная
+                    </label>
+                    <input id="max-price" class="input-price" type="number" placeholder="" style="font-family:'Courier New', Courier, monospace; font-size: 20px; margin-bottom: 20px">
+                </form>
+            </div>
+        </div>
+        <div class="products">
+            <div id="catalogItems">
+                @for (var i = 0; i < 2; i++)
+                {
+                    <div class="row">
+                        @for (var j = 0; j < 3; j++)
+                        {
+                            <div class="column">
+                                <div class="card-sceleton">
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+            <div class="loader">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#query').submit(function (e) {
+            e.preventDefault();
+        });
+        $('#form').submit(function (e) {
+            e.preventDefault();
+        });
+        let input_search = document.getElementById('query');
+        autocomplete(input_search);
+    }
+    );
+    var apiOptions = @Json.Serialize(@Model.ApiGateway);
+</script>
+
+<script src="~/js/catalog/ajax/catalog.js"></script>
+<script src="~/js/catalog/autocomlete.js"></script>
+@* <script>
+    window.addEventListener('scroll', function () {
+        let filter = document.querySelector('.filter');
+        let main = document.querySelector('.container');
+        let filterHeight = filter.offsetHeight;
+        let mainHeight = main.offsetHeight;
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Рассчитываем максимальную высоту, на которой должен остановиться блок фильтров
+        let maxTop = main.offsetTop + mainHeight - filterHeight;
+
+        // Если прокрутка достигает конца блока main, останавливаем блок фильтров перед ним
+        if (scrollTop >= maxTop) {
+            filter.style.top = maxTop + 'px';
+        } else {
+            filter.style.top = '0';
+        }
+    });
+</script> *@

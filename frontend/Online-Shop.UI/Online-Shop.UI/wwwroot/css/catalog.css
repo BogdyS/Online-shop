@@ -1,0 +1,201 @@
+.icon_filter {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.filter_price {
+    display: flex;
+}
+
+.filter_price_text p {
+    margin: 0;
+}
+
+.catalog {
+    display: flex;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+    .catalog a {
+        text-decoration: none;
+    }
+
+.filter_products {
+    color: grey;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 0px;
+}
+
+.filter {
+    width: 30%;
+    margin-left: 0px;
+    position:fixed;
+}
+
+.filter_products h3 {
+    color: black;
+    margin: 30px 0 60px 70px;
+}
+
+.filter_products input {
+    margin-bottom: 35px;
+}
+
+.row {
+    margin: 0 -5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /*  эффект "карточек" */
+    padding: 16px;
+    text-align: center;
+    background-color: rgb(246, 251, 255);
+    width: 260px;
+    height: 420px;
+    border-radius: 16px;
+    transition: all 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-sceleton {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: rgb(203, 203, 203);
+    width: 260px;
+    height: 420px;
+    border-radius: 16px;
+    transition: all 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+.popular_btn {
+    font-family: Trebuchet MS, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    border-style: none;
+    font-size: 20px;
+    background-color: #80dcec;
+    border-radius: 30px;
+}
+
+    .popular_btn p {
+        margin-bottom: 0;
+    }
+
+    .popular_btn :hover {
+        cursor: pointer;
+    }
+
+.column {
+    float: left;
+    width: 33%;
+    padding: 0 10px;
+    padding-bottom: 40px;
+}
+
+.card-img-container {
+    height: 230px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.popular_img {
+    width: 100%;
+    /*margin-bottom: 20px;*/
+}
+
+.products {
+    margin-right: 0px;
+    width: 70%;
+    display: block;
+    justify-content: center;
+    margin-left: 440px;
+}
+
+.search {
+    width: 100%;
+    display: flex;
+    margin-bottom: 0px;
+}
+
+#form {
+    margin: 0 auto;
+    width: 600px;
+}
+
+/*Loader*/
+
+.loader {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-left: 45%;
+    opacity: 0;
+}
+
+
+    .loader.show {
+        opacity: 1;
+    }
+
+    .loader div {
+        display: inline-block;
+        position: absolute;
+        left: 8px;
+        width: 16px;
+        background: #f4f4f4;
+        animation: loader 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+    }
+
+        .loader div:nth-child(1) {
+            left: 8px;
+            animation-delay: -0.24s;
+        }
+
+        .loader div:nth-child(2) {
+            left: 32px;
+            animation-delay: -0.12s;
+        }
+
+        .loader div:nth-child(3) {
+            left: 56px;
+            animation-delay: 0;
+        }
+
+@keyframes loader {
+    0% {
+        top: 8px;
+        height: 64px;
+    }
+
+    50%, 100% {
+        top: 24px;
+        height: 32px;
+    }
+}

@@ -1,0 +1,88 @@
+.product_info {
+  display: flex;
+  margin-left: 100px;
+}
+
+.add_photo {
+  width: 150px;
+}
+
+.product_mini_photo {
+  display: flex;
+  flex-direction: column;
+  margin-top: 200px;
+}
+
+.product_photo {
+  width: 900px;
+}
+
+figure.zoom {
+  border-radius: 12px;
+  cursor: zoom-in;
+}
+
+figure.zoom img:hover {
+  opacity: 0;
+}
+
+figure.zoom img {
+  transition: opacity 0.5s;
+  display: block;
+}
+
+.characteristics {
+  margin-top: 200px;
+}
+
+.characteristics button {
+  font-family: Trebuchet MS, sans-serif;
+  width: 100%;
+  border-style: none;
+  font-size: 20px;
+  background-color: #80dcec;
+  border-radius: 30px;
+  padding: 15px 5px;
+  margin: 30px 0;
+}
+
+.product_text_section {
+  margin-left: 100px;
+}
+
+.product_text_section p {
+  margin: 50px 0;
+}
+
+.product_price {
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.table {
+  width: 40%;
+  border: none;
+  margin-bottom: 40px;
+  margin-left: 100px;
+  text-align: left;
+}
+.table th {
+  padding: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: left;
+  color: #444441;
+  border: none;
+  font-size: 23px;
+  padding: 20px 0;
+}
+.table tbody td {
+  padding: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #444441;
+  border: none;
+  font-size: 18px;
+}

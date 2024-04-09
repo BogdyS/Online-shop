@@ -1,0 +1,51 @@
+﻿@page "/login"
+@model Online_Shop.UI.Pages.AuthPageModel
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+    <title>Регистрация</title>
+    <link href="@Url.Content("~/css/auth.css")" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="main">
+        <h2>Войти в систему</h2>
+        <form id="form">
+            <label for="email">Логин:</label>
+            <input type="email"
+                   id="email"
+                   name="email"
+                   required />
+
+            <label for="password">Пароль:</label>
+            <input type="password"
+                   id="password"
+                   name="password"
+                   required />
+
+            <button id="submit" style="margin-left: 45%">
+                Войти
+            </button>
+            <p style ="margin-left: 25%"><a href="~/catalog">Продолжить как гость</a></p>
+        </form>
+    </div>
+</body>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#form').submit(function (e) {
+            e.preventDefault();
+        });
+    }
+    );
+    var apiOptions = @Json.Serialize(@Model.ApiGateway);
+</script>
+<script src="~/js/login/login.js"></script>
+</html>

@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineShop.Gateway", "OnlineShop.Gateway\OnlineShop.Gateway.csproj", "{197C8EDA-9D5C-4AD6-A3AF-E002403F896A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{2E2B543A-0803-4B80-BD5F-8013BA619355}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{197C8EDA-9D5C-4AD6-A3AF-E002403F896A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{197C8EDA-9D5C-4AD6-A3AF-E002403F896A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{197C8EDA-9D5C-4AD6-A3AF-E002403F896A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{197C8EDA-9D5C-4AD6-A3AF-E002403F896A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9279F234-3A3B-4510-9F9F-49242AD158FC}
+	EndGlobalSection
+EndGlobal

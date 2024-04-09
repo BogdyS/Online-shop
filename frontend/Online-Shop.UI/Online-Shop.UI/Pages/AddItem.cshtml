@@ -1,0 +1,104 @@
+﻿@page "/admin/items/add"
+@model Online_Shop.UI.Pages.AddItemModel
+@{
+    ViewData["Title"] = "Добавление товара";
+}
+@section Styles {
+    <link href="@Url.Content("~/css/add_prod.css")" rel="stylesheet" type="text/css" />
+}
+<script src="~/js/add-item/add.js"></script>
+<section class="new-prod-container">
+    <div class="new-prod-wrap">
+        <form id="prod-form"
+              autocomplete="off">
+            <label>
+                <p>Название</p>
+                <input type="text"
+                       id="name"
+                       name="item.name"
+                       class="input-field"
+                       placeholder="Название товара"
+                       required />
+            </label>
+
+            <label>
+                <p>Цена</p>
+                <input type="number"
+                       id="price"
+                       name="item.price"
+                       class="input-field"
+                       placeholder="Цена товара (₽)"
+                       min="1"
+                       required />
+            </label>
+
+            <label>
+                <p>Описание</p>
+                <textarea id="description"
+                          name="item.description"
+                          class="input-field"
+                          placeholder="Описание товара"
+                          required></textarea>
+            </label>
+
+            <label for="poster" class="poster-input">
+                <p>Изображения товара</p>
+                <div class="poster-container">
+                    <input type="file"
+                           id="poster"
+                           name="item.images"
+                           class="poster-input-field"
+                           accept="image/png, image/jpeg, image/jpg"
+                           required />
+                </div>
+            </label>
+
+            <div class="buttons">
+                <button class="btn-save" type="submit">Сохранить</button>
+                <button class="back"><a href="home_page.html">Назад</a></button>
+            </div>
+        </form>
+    </div>
+</section>
+<script>
+    function validateForm() {
+        let name = document.getElementById("name").value;
+        let description = document.getElementById("description").value;
+        let image = document.getElementById("poster").files[0];
+
+        if (name === "" || description === "" || image == null) {
+            alert("Все поля должны быть заполнены");
+            return false;
+        }
+
+        if (name[0] === name[0].toLowerCase()) {
+            alert("Название должно начинаться с заглавной буквы!");
+            return false;
+        }
+
+        if (name.includes(" ") === false) {
+            alert(
+                "В строке названия продукта должно быть как название фирмы/модели, так и категория самого продукта, например 'Компьютер Asus'"
+            );
+            return false;
+        }
+
+        if (description.length < 50) {
+            alert("Описание должно содержать не менее 50 символов");
+            return false;
+        }
+
+        const allowedFormats = ["jpg", "jpeg", "png"];
+        if (allowedFormats.indexOf(image.name.split('.').pop()) == -1) {
+            alert(
+                "Поддерживаемые форматы: jpeg, jpg, png."
+            );
+            return false;
+        }
+
+        return true;
+    }
+</script>
+<script>
+    var apiOptions = @Json.Serialize(@Model.ApiGateway);
+</script>

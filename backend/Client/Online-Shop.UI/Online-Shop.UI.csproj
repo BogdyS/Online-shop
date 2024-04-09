@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Online_Shop.UI</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OnlineShop.HttpClients\OnlineShop.HttpClients.csproj" />
+  </ItemGroup>
+	<ItemGroup>
+		<None Include="wwwroot\**">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+	  <Content Remove="wwwroot\css\auth.css" />
+	  <Content Remove="wwwroot\img\background.jpg" />
+	  <Content Remove="wwwroot\js\catalog\autocomplete.css" />
+	  <Content Remove="wwwroot\js\login\login.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <_ContentIncludedByDefault Remove="wwwroot\js\login\login.js" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Online_Shop.UI</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+
+@await RenderSectionAsync("Styles", required: false)
+@await RenderSectionAsync("Scripts", required: false)
+<body>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <header>
+        <div class="logo">
+            <a href="~/html/home_page.html">
+                <img class="logo" src="~/img/logo.png" alt="Логотип" />
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="~/home_page.html">Главная</a></li>
+                <li><a href="~/catalog">Каталог</a></li>
+                <li><a href="~/admin/items/add">Добавить товар</a></li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <a class="icon" href="/">
+                <img class="icon" src="~/img/basket.png" alt="Корзина" />
+            </a>
+            <a class="icon" href="/">
+                <img class="icon" src="~/img/person.png" alt="Личный кабинет" />
+            </a>
+        </div>
+    </header>
+    <div class="container">
+        <main>
+            @RenderBody()
+            </main>
+    </div>
+
+    <footer>
+        <div class="footer_text">
+            <div class="footer_menu">
+                <p class="footer_column">Пн-Вс 10:00-23:00</p>
+                <a href="tel:+(937)723-111-345">+(937)723-111-345</a>
+            </div>
+        </div>
+        <div class="footer_icons">
+            <img src="~/img/telegram.png" alt="Telegram" class="icon" />
+            <img src="~/img/twitter.png" alt="Twitter" class="icon" />
+            <img src="~/img/facebook.png" alt="Facebook" class="icon" />
+            <img src="~/img/youtube.png" alt="Youtube" class="icon" />
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Online-Shop.UI", "Online-Shop.UI\Online-Shop.UI.csproj", "{5E39E1D2-8DED-4413-AB65-65FF66A32A70}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineShop.HttpClients", "OnlineShop.HttpClients\OnlineShop.HttpClients.csproj", "{DDA99137-6F86-4A80-8E42-8DA717A5121C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{BF1E226C-2B14-4DF8-8896-CEAE859B3EC2}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile = Dockerfile
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E39E1D2-8DED-4413-AB65-65FF66A32A70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E39E1D2-8DED-4413-AB65-65FF66A32A70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E39E1D2-8DED-4413-AB65-65FF66A32A70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E39E1D2-8DED-4413-AB65-65FF66A32A70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDA99137-6F86-4A80-8E42-8DA717A5121C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDA99137-6F86-4A80-8E42-8DA717A5121C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDA99137-6F86-4A80-8E42-8DA717A5121C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDA99137-6F86-4A80-8E42-8DA717A5121C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33E50167-2773-4627-B3CC-AED2094FC388}
+	EndGlobalSection
+EndGlobal

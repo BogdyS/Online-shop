@@ -1,0 +1,100 @@
+version: "3.9"
+services:
+  db_items_course:
+    container_name: db_items_course
+    image: postgres:15.4
+    restart: always
+    environment:
+      POSTGRES_DB: "shop_items"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - local_pgdata:/var/lib/postgresql/data
+    ports:
+      - "5445:5432"
+    networks:
+      - online-shop
+
+  db_auth:
+    container_name: db_auth
+    image: postgres:15.4
+    restart: always
+    environment:
+      POSTGRES_DB: "shop-auth"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - local_pgdata:/var/lib/postgresql/data
+    ports:
+      - "5444:5432"
+    networks:
+      - online-shop
+
+  auth_service:
+    container_name: auth_service
+    image: bogdys/bachelor-degree-work-auth-service:rc-1
+    restart: always
+    depends_on:
+      - db_auth
+    environment:
+      "ASPNETCORE_ENVIRONMENT": "Compose"
+    ports:
+      - "7266:8080"
+    networks:
+      - online-shop
+
+  items_service:
+    container_name: items_service
+    image: bogdys/bachelor-degree-work-items-service:v1.1
+    restart: always
+    depends_on:
+      - db_items_course
+    environment:
+      "ASPNETCORE_ENVIRONMENT": "Compose"
+      AWS_ACCESS_KEY_ID: "YCAJE0EjGNVL03Z_aGMyS36V_"
+      AWS_SECRET_ACCESS_KEY: "YCPWzYgBmMPylmJSfaEPR4gs4lxArdGCv2H0mhdR"
+      AWS_DEFAULT_REGION: "ru-central1"
+      AWS_REGION_ENDPOINT: "https://s3.yandexcloud.net"
+    ports:
+      - "7267:80"
+    networks:
+      - online-shop
+
+  gateway:
+    container_name: gateway
+    image: bogdys/bachelor-degree-work-gateway:v1.1
+    restart: always
+    environment:
+      "ASPNETCORE_ENVIRONMENT": "Compose"
+    ports:
+      - "80:8080"
+    networks:
+      - online-shop
+
+  client:
+    container_name: client
+    image: bogdys/bachelor-degree-work-client:v1.2
+    restart: always
+    environment:
+      "ASPNETCORE_ENVIRONMENT": "ComposeLocal"
+    ports:
+      - "81:8080"
+    networks:
+      - online-shop  
+
+volumes:
+  local_pgdata:
+  pgadmin-data:
+
+networks:
+  online-shop:

@@ -1,0 +1,95 @@
+version: "3.9"
+services:
+  db_items_course:
+    container_name: db_items_course
+    image: postgres:15.4
+    restart: always
+    environment:
+      POSTGRES_DB: "shop_items"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - local_pgdata:/var/lib/postgresql/data
+    ports:
+      - "5445:5432"
+    networks:
+      - online-shop
+
+  db_auth:
+    container_name: db_auth
+    image: postgres:15.4
+    restart: always
+    environment:
+      POSTGRES_DB: "shop-auth"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - local_pgdata:/var/lib/postgresql/data
+    ports:
+      - "5444:5432"
+    networks:
+      - online-shop
+
+  auth_service:
+    container_name: auth_service
+    build:
+      context: "../backend/Auth"
+      dockerfile: "./Dockerfile"
+    restart: always
+    depends_on:
+      - db_auth
+    environment:
+      "ASPNETCORE_ENVIRONMENT": "Compose"
+    ports:
+      - "7266:8080"
+    networks:
+      - online-shop
+
+  items_service:
+    container_name: items_service
+    build:
+      context: "../backend/Online-shop"
+      dockerfile: "./Dockerfile"
+    restart: always
+    depends_on:
+      - db_items_course
+    environment:
+      "ASPNETCORE_ENVIRONMENT": "Compose"
+      AWS_ACCESS_KEY_ID: "YCAJE0EjGNVL03Z_aGMyS36V_"
+      AWS_SECRET_ACCESS_KEY: "YCPWzYgBmMPylmJSfaEPR4gs4lxArdGCv2H0mhdR"
+      AWS_DEFAULT_REGION: "ru-central1"
+      AWS_REGION_ENDPOINT: "https://s3.yandexcloud.net"
+    ports:
+      - "7267:80"
+    networks:
+      - online-shop
+
+  gateway:
+    container_name: gateway
+    build:
+      context: "../backend/Gateway"
+      dockerfile: "./Dockerfile"
+    restart: always
+    environment:
+      "ASPNETCORE_ENVIRONMENT": "Compose"
+    ports:
+      - "7268:8080"
+    networks:
+      - online-shop  
+
+volumes:
+  local_pgdata:
+  pgadmin-data:
+
+networks:
+  online-shop:

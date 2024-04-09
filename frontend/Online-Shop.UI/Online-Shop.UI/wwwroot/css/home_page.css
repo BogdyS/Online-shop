@@ -1,0 +1,56 @@
+.laptop{
+    width: 580px;
+    margin-left: 100px;
+}
+
+.preview{
+    display: flex;
+    align-items: center;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.text_preview{
+    vertical-align: middle;
+    margin-left: 200px;
+}
+
+.text_preview h1{
+    font-size: 40px;
+}
+
+.price{
+    margin-top: 100px;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.pay_button{
+    display: flex;
+}
+
+.pay{
+    font-family:'Courier New', Courier, monospace;
+    background-color: orange;
+    padding: 10px 40px;
+    border: none;
+    margin-right: 40px;
+    margin-left: 20px;
+    border-radius: 20px;
+    font-size: 30px;
+    font-weight: bolder;
+    color:white
+}
+
+.inst_pay{
+    font-family:'Courier New', Courier, monospace;
+    background-color: #80dcec;
+    padding: 10px 40px;
+    border: none;
+    margin-right: 40px;
+    margin-left: 20px;
+    border-radius: 20px;
+    font-size: 30px;
+    font-weight: bolder;
+    color:black
+}
