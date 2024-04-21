@@ -1,6 +1,8 @@
 .product_info {
   display: flex;
   margin-left: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .add_photo {
@@ -14,30 +16,23 @@
 }
 
 .product_photo {
-  width: 900px;
-}
-
-figure.zoom {
-  border-radius: 12px;
-  cursor: zoom-in;
-}
-
-figure.zoom img:hover {
-  opacity: 0;
-}
-
-figure.zoom img {
-  transition: opacity 0.5s;
-  display: block;
+    width: 50%;
+    border-radius: 30px;
 }
 
 .characteristics {
-  margin-top: 200px;
+    margin-top: 50px;
+    margin-left: 50px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 30px;
+    height: 400px;
+    width: 50%;
 }
 
 .characteristics button {
   font-family: Trebuchet MS, sans-serif;
-  width: 100%;
+  width: 240px;
   border-style: none;
   font-size: 20px;
   background-color: #80dcec;
@@ -47,7 +42,10 @@ figure.zoom img {
 }
 
 .product_text_section {
-  margin-left: 100px;
+    margin-left: 100px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 30px;
 }
 
 .product_text_section p {
@@ -58,15 +56,27 @@ figure.zoom img {
   color: black;
   font-size: 30px;
   font-weight: bold;
+  margin-top: 20px;
 }
 
-.table {
-  width: 40%;
-  border: none;
-  margin-bottom: 40px;
-  margin-left: 100px;
-  text-align: left;
+.characteristics-block {
+    margin-left: 100px;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 30px;
 }
+
+
+
+    .table {
+        width: 40%;
+        border: none;
+        margin-bottom: 40px;
+        
+        margin-top: 30px;
+        text-align: left;
+    }
 .table th {
   padding: 10px;
   font-weight: 500;
@@ -85,4 +95,73 @@ figure.zoom img {
   color: #444441;
   border: none;
   font-size: 18px;
+}
+
+.comment-block {
+    margin-left: 100px;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 30px;
+}
+
+    .comment-block ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .comment-block li {
+        padding: 0;
+    }
+
+    .block-title {
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+.comment-block textarea{
+    width:600px;
+    height: 100px;
+    padding: 10px 15px;
+    margin-bottom:20px;
+}
+
+.comment {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: rgb(236, 236, 236);
+    border-radius: 30px;
+}
+
+.comment-info{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.user-info{
+    display: flex;
+}
+
+.comment-user-img {
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.comment-user-img img {
+    width: 50px;
+    height: 50px;
+}
+
+.comment-user-name{
+    font-size:20px;
+}
+
+.comment-date {
+    font-size: 18px;
+}
+
+.comment-text-block{
+    padding-left: 50px;
 }

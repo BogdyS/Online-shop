@@ -8,13 +8,14 @@
 }
 
 <div class="product_info">
-    <figure class="zoom">
+    @* <figure class="zoom">
         <img src="@Model.ItemModel.ImageUrls.First()" alt="Изображение товара" class="product_photo" id="product-image" />
-    </figure>
+    </figure> *@
+    <img src="@Model.ItemModel.ImageUrls.First()" alt="Изображение товара" class="product_photo" id="product-image" />
     <div class="characteristics">
-        <h1 id="product-title"></h1>
-        <p class="product_price">Цена:</p>
-        <p class="product_price" id="product-price-value">@Model.ItemModel.Price p</p>
+        <h1 id="product-title">@Model.ItemModel.Name</h1>
+        <p class="product_price">Цена: @Model.ItemModel.Price p</p>
+        @* <p class="product_price" id="product-price-value">@Model.ItemModel.Price p</p> *@
         <button class="price_btn">
             Добавить в корзину
         </button>
@@ -24,39 +25,99 @@
 <div class="product_text_section">
     <h2>Описание @Model.ItemModel.Name:</h2>
     <p id="description">@Model.ItemModel.Description</p>
-    <h2>Характеристики @Model.ItemModel.Name:</h2>
-    <p id="characteristics"></p>
+    
 </div>
 
-<table class="table">
-    <tbody>
-        <tr>
-            <th>Модель</th>
-            <td>@Model.ItemModel.Name</td>
-        </tr>
-        <tr>
-            <th>Операционная система</th>
-            <td>Windows 10</td>
-        </tr>
-        <tr>
-            <th>Оперативная память (RAM)</th>
-            <td>16 ГБ</td>
-        </tr>
-        <tr>
-            <th>Графический контроллер</th>
-            <td>GeForce GTX 1650 4GB</td>
-        </tr>
-        <tr>
-            <th>Объем SSD</th>
-            <td>512 ГБ</td>
-        </tr>
-        <tr>
-            <th>Работа от аккумулятора</th>
-            <td>до 7 часов</td>
-        </tr>
-        <tr>
-            <th>Диагональ экрана</th>
-            <td>15.6"(39.6 см)</td>
-        </tr>
-    </tbody>
-</table>
+<div class="characteristics-block">
+    <h2>Характеристики @Model.ItemModel.Name:</h2>
+    <table class="table">
+
+        <tbody>
+            <tr>
+                <th>Модель</th>
+                <td>@Model.ItemModel.Name</td>
+            </tr>
+            <tr>
+                <th>Операционная система</th>
+                <td>Windows 10</td>
+            </tr>
+            <tr>
+                <th>Оперативная память (RAM)</th>
+                <td>16 ГБ</td>
+            </tr>
+            <tr>
+                <th>Графический контроллер</th>
+                <td>GeForce GTX 1650 4GB</td>
+            </tr>
+            <tr>
+                <th>Объем SSD</th>
+                <td>512 ГБ</td>
+            </tr>
+            <tr>
+                <th>Работа от аккумулятора</th>
+                <td>до 7 часов</td>
+            </tr>
+            <tr>
+                <th>Диагональ экрана</th>
+                <td>15.6"(39.6 см)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="comment-block">
+    <p class="block-title">Оставить отзыв:</p>
+    <textarea placeholder="Ваш отзыв..."></textarea>
+    <p class="block-title">Отзывы:</p>
+    <ul>
+        <li>
+            <div class="comment">
+                <div class="comment-info">
+                    <div class="user-info">
+                        <div class="comment-user-img">
+                            <img src="/img/profile-user-icon.png" />
+                        </div>
+                        <div class="comment-user-name">Иван Иванов</div>
+                    </div>
+                    <div class="comment-date">12.02.2024</div>
+                </div>
+                <div class="comment-text-block">
+                    <p class="comment-text">Я устал... Я больше не хочу... Я хочу спать... или нажраться...</p>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="comment">
+                <div class="comment-info">
+                    <div class="user-info">
+                        <div class="comment-user-img">
+                            <img src="/img/profile-user-icon.png" />
+                        </div>
+                        <div class="comment-user-name">Иван Иванов</div>
+                    </div>
+                    <div class="comment-date">12.02.2024</div>
+                </div>
+                <div class="comment-text-block">
+                    <p class="comment-text">Я устал... Я больше не хочу... Я хочу спать... или нажраться...</p>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="comment">
+                <div class="comment-info">
+                    <div class="user-info">
+                        <div class="comment-user-img">
+                            <img src="/img/profile-user-icon.png" />
+                        </div>
+                        <div class="comment-user-name">Иван Иванов</div>
+                    </div>
+                    <div class="comment-date">12.02.2024</div>
+                </div>
+                <div class="comment-text-block">
+                    <p class="comment-text">Я устал... Я больше не хочу... Я хочу спать... или нажраться...</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
