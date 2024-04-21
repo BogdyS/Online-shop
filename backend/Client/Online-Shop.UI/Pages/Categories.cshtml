@@ -1,0 +1,45 @@
+﻿@page "/categories"
+@model Online_Shop.UI.Pages.CategoriesModel
+@{
+    ViewData["Title"] = "Категории";
+}
+@section Styles {
+    <link href="@Url.Content("~/css/autocomplete.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/categories.css")" rel="stylesheet" type="text/css" />
+}
+
+<div style="display: block; width:100%;">
+    <div class="search">
+        <form id="form" autocomplete="off">
+            <div class="autocomplete">
+                <input type="search"
+                       id="query"
+                       placeholder="Поиск в каталоге товаров"
+                       style="width: 500px; height: 50px; font-size: 20px;">
+
+                <button type="button" id="searchButton" style="height: 50px; width: 90px;">Поиск</button>
+            </div>
+        </form>
+    </div>
+    <div class="categories">
+        <div class="products">
+            <div id="catalogItems">
+                @for (var i = 0; i < 2; i++)
+                {
+                    <div class="row">
+                        @for (var j = 0; j < 3; j++)
+                        {
+                            <div class="column">
+                                <div class="card-sceleton">
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/catalog/ajax/categories.js"></script>
+<script>var apiOptions = @Json.Serialize(@Model.ApiGateway);</script>

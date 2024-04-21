@@ -17,7 +17,9 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <Content Remove="wwwroot\css\auth.css" />
+	  <Content Remove="wwwroot\css\categories.css" />
 	  <Content Remove="wwwroot\img\background.jpg" />
+	  <Content Remove="wwwroot\js\catalog\ajax\categories.js" />
 	  <Content Remove="wwwroot\js\catalog\autocomplete.css" />
 	  <Content Remove="wwwroot\js\login\login.js" />
 	</ItemGroup>
