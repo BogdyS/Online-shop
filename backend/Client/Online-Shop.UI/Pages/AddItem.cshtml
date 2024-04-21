@@ -23,7 +23,7 @@
 
             <label>
                 <p>Категория</p>
-                <select id="category" for="category" name="category">
+                <select id="category" for="category" name="item.category">
                     @foreach (var category in Model.Categories)
                     {
                         <option value="@category.Id">@category.Name</option>

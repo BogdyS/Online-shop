@@ -17,7 +17,7 @@ namespace Persistence.Migrations
                   ('Фото и видео'),
                   ('Смартфоны'),
                   ('Аудиотехника'),
-                  ('гаджеты'),
+                  ('Гаджеты'),
                   ('Бытовая техника')
 ");
             migrationBuilder.Sql(@"

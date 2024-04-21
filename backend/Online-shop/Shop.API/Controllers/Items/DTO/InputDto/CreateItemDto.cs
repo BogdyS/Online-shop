@@ -29,5 +29,8 @@ namespace Shop.API.Controllers.Items.DTO.InputDto
         /// </summary>
         [Required]
         public IFormFile[] Images { get; set; }
+
+        [Required]
+        public int Category { get; set; }
     }
 }

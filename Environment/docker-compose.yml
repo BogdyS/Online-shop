@@ -14,7 +14,7 @@ services:
       timeout: 5s
       retries: 5
     volumes:
-      - local_pgdata:/var/lib/postgresql/data
+      - local_pgdata_items:/var/lib/postgresql/data
     ports:
       - "5445:5432"
     networks:
@@ -34,7 +34,7 @@ services:
       timeout: 5s
       retries: 5
     volumes:
-      - local_pgdata:/var/lib/postgresql/data
+      - local_pgdata_auth:/var/lib/postgresql/data
     ports:
       - "5444:5432"
     networks:
@@ -55,7 +55,7 @@ services:
 
   items_service:
     container_name: items_service
-    image: bogdys/bachelor-degree-work-items-service:v1.1
+    image: bogdys/bachelor-degree-work-items-service:v1.4
     restart: always
     depends_on:
       - db_items_course
@@ -83,18 +83,18 @@ services:
 
   client:
     container_name: client
-    image: bogdys/bachelor-degree-work-client:v1.2
+    image: bogdys/bachelor-degree-work-client:v1.5
     restart: always
     environment:
-      "ASPNETCORE_ENVIRONMENT": "ComposeLocal"
+      "ASPNETCORE_ENVIRONMENT": "Compose"
     ports:
       - "81:8080"
     networks:
       - online-shop  
 
 volumes:
-  local_pgdata:
-  pgadmin-data:
+  local_pgdata_auth:
+  local_pgdata_items:
 
 networks:
   online-shop:

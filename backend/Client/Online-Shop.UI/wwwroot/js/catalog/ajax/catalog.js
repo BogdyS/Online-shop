@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     let categories = await (await fetch(url)).json();
     let innerHtml = ``;
     categories.forEach((category) => {
-        innerHtml += `<label style="display:flex;">
+        innerHtml += `<label style="align-items:center; display: block;">
             <input type="checkbox" name="select" value="${category.id}" />
             ${category.name}
         </label>`

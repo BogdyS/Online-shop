@@ -47,6 +47,7 @@ namespace Shop.API.Controllers.Items.Operations
                     Description = request.Description,
                     Price = request.Price,
                     ImageStreams = request.Images.Select(x => x.OpenReadStream()).ToArray(),
+                    Category = request.Category
                 };
             }
         }

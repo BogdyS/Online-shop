@@ -35,7 +35,8 @@ namespace Shop.Services.Services
             {
                 Name = item.Name,
                 Description = item.Description,
-                Price = item.Price
+                Price = item.Price,
+                CategoryId = item.Category
             };
 
             _context.Items.Add(itemToAdd);
