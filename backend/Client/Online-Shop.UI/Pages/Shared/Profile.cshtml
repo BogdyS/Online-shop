@@ -1,0 +1,413 @@
+﻿@page "/profile"
+@model Online_Shop.UI.Pages.Shared.ProfileModel
+@{
+    ViewData["Title"] = "Профиль";
+}
+@section Styles {
+    <link href="@Url.Content("~/css/profile.css")" rel="stylesheet" type="text/css" />
+}
+
+<div class="profile-page">
+    <div class="profile-block">
+        <div>
+            <div>
+                <p class="block-title">Профиль</p>
+            </div>
+            <div>
+                <img src="/img/profile-user-icon.png" />
+            </div>
+            <div>
+                <p class="user-name"><strong>Вася Пупкин</strong></p>
+            </div>
+            
+        </div>
+        <p class="phone-number"><strong>Телефон:</strong> 89373782818</p>
+        <p class="e-mail"><strong>e-mail:</strong> Pupkin@mail.com</p>
+    </div>
+    <div class="main-block">
+        <div class="navigate-block">
+            <div class="nav " >
+                <img class="nav-icon" src="/img/basket.png" />
+                <p class="navigate-point-backet active" id="backet">Корзина товаров</p>
+            </div>
+            <div class="nav " >
+                <img class="nav-icon" src="/img/heart.png" />
+                <p class="navigate-point-fav inactive" id="fav">Избранное</p>
+            </div>
+            <div class="nav " >
+                <img class="nav-icon" src="/img/history.png" />
+                <p class="navigate-point-history inactive" id="history">История заказов</p>
+            </div>
+        </div>
+        <div class="backet" id="backet-block">
+            <div class="check-all">
+                <label>Выбрать все</label>
+                <input type="checkbox" />
+            </div>
+            <div class="items">
+                <ul>
+                    <li>
+                        <div class="item-block">
+                            <div class="item-block-info">
+                                <div class="item-block-img">
+                                    <img src="/img/asus.jpg" />
+                                </div>
+                                <div class="item-block-desc">
+                                    <p>Название</p>
+                                    <p>Описание...</p>
+                                    <p>Цена: 43000р</p>
+                                </div>
+                            </div>
+                            <div class="item-actions">
+                                <div class="del-and-check">
+                                    <img src="/img/trash.png" />
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="counter">
+                                    <button id="decrease">-</button>
+                                    <span class="value" id="counter-value">0</span>
+                                    <button id="increase">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-block">
+                            <div class="item-block-info">
+                                <div class="item-block-img">
+                                    <img src="/img/asus.jpg" />
+                                </div>
+                                <div class="item-block-desc">
+                                    <p>Название</p>
+                                    <p>Описание...</p>
+                                    <p>Цена: 43000р</p>
+                                </div>
+                            </div>
+                            <div class="item-actions">
+                                <div class="del-and-check">
+                                    <img src="/img/trash.png" />
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="counter">
+                                    <button id="decrease">-</button>
+                                    <span class="value" id="counter-value">0</span>
+                                    <button id="increase">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-block">
+                            <div class="item-block-info">
+                                <div class="item-block-img">
+                                    <img src="/img/asus.jpg" />
+                                </div>
+                                <div class="item-block-desc">
+                                    <p>Название</p>
+                                    <p>Описание...</p>
+                                    <p>Цена: 43000р</p>
+                                </div>
+                            </div>
+                            <div class="item-actions">
+                                <div class="del-and-check">
+                                    <img src="/img/trash.png" />
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="counter">
+                                    <button id="decrease">-</button>
+                                    <span class="value" id="counter-value">0</span>
+                                    <button id="increase">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-block">
+                            <div class="item-block-info">
+                                <div class="item-block-img">
+                                    <img src="/img/asus.jpg" />
+                                </div>
+                                <div class="item-block-desc">
+                                    <p>Название</p>
+                                    <p>Описание...</p>
+                                    <p>Цена: 43000р</p>
+                                </div>
+                            </div>
+                            <div class="item-actions">
+                                <div class="del-and-check">
+                                    <img src="/img/trash.png" />
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="counter">
+                                    <button id="decrease">-</button>
+                                    <span class="value" id="counter-value">0</span>
+                                    <button id="increase">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-block">
+                            <div class="item-block-info">
+                                <div class="item-block-img">
+                                    <img src="/img/asus.jpg" />
+                                </div>
+                                <div class="item-block-desc">
+                                    <p>Название</p>
+                                    <p>Описание...</p>
+                                    <p>Цена: 43000р</p>
+                                </div>
+                            </div>
+                            <div class="item-actions">
+                                <div class="del-and-check">
+                                    <img src="/img/trash.png" />
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="counter">
+                                    <button id="decrease">-</button>
+                                    <span class="value" id="counter-value">0</span>
+                                    <button id="increase">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+        <div class="favourites" id="fav-block">
+            <div class="items">
+                <ul>
+                    <li>
+                        <div class="item-block">
+                            <div class="item-block-info">
+                                <div class="item-block-img">
+                                    <img src="/img/asus.jpg" />
+                                </div>
+                                <div class="item-block-desc">
+                                    <p>Название</p>
+                                    <p>Описание...</p>
+                                </div>
+                            </div>
+                            <div class="price-block">
+                                <p><strong>Цена:</strong> 43000р</p>
+                                <button class="add-backet">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-block">
+                            <div class="item-block-info">
+                                <div class="item-block-img">
+                                    <img src="/img/asus.jpg" />
+                                </div>
+                                <div class="item-block-desc">
+                                    <p>Название</p>
+                                    <p>Описание...</p>
+                                </div>
+                            </div>
+                            <div class="price-block">
+                                <p><strong>Цена:</strong> 43000р</p>
+                                <button class="add-backet">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-block">
+                            <div class="item-block-info">
+                                <div class="item-block-img">
+                                    <img src="/img/asus.jpg" />
+                                </div>
+                                <div class="item-block-desc">
+                                    <p>Название</p>
+                                    <p>Описание...</p>
+                                </div>
+                            </div>
+                            <div class="price-block">
+                                <p><strong>Цена:</strong> 43000р</p>
+                                <button class="add-backet">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-block">
+                            <div class="item-block-info">
+                                <div class="item-block-img">
+                                    <img src="/img/asus.jpg" />
+                                </div>
+                                <div class="item-block-desc">
+                                    <p>Название</p>
+                                    <p>Описание...</p>
+                                </div>
+                            </div>
+                            <div class="price-block">
+                                <p><strong>Цена:</strong> 43000р</p>
+                                <button class="add-backet">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-block">
+                            <div class="item-block-info">
+                                <div class="item-block-img">
+                                    <img src="/img/asus.jpg" />
+                                </div>
+                                <div class="item-block-desc">
+                                    <p>Название</p>
+                                    <p>Описание...</p>
+                                </div>
+                            </div>
+                            <div class="price-block">
+                                <p><strong>Цена:</strong> 43000р</p>
+                                <button class="add-backet">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="history" id="history-block">
+            <div class="items">
+                <ul>
+                    <li>
+                        <div class="item-block">
+                            <div class="item-block-info">
+                                <div class="item-block-img">
+                                    <img src="/img/asus.jpg" />
+                                </div>
+                                <div class="item-block-desc">
+                                    <p><strong>Заказ</strong> №123456789</p>
+                                    <p><strong>Итого:</strong> 43000р</p>
+                                </div>
+                            </div>
+                            <div class="price-block">
+                                <button >Детали заказа</button>
+                                <button >Повторить заказ</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-block">
+                            <div class="item-block-info">
+                                <div class="item-block-img">
+                                    <img src="/img/asus.jpg" />
+                                </div>
+                                <div class="item-block-desc">
+                                    <p><strong>Заказ</strong> №123456789</p>
+                                    <p><strong>Итого:</strong> 43000р</p>
+                                </div>
+                            </div>
+                            <div class="price-block">
+                                <button>Детали заказа</button>
+                                <button>Повторить заказ</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-block">
+                            <div class="item-block-info">
+                                <div class="item-block-img">
+                                    <img src="/img/asus.jpg" />
+                                </div>
+                                <div class="item-block-desc">
+                                    <p><strong>Заказ</strong> №123456789</p>
+                                    <p><strong>Итого:</strong> 43000р</p>
+                                </div>
+                            </div>
+                            <div class="price-block">
+                                <button>Детали заказа</button>
+                                <button>Повторить заказ</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-block">
+                            <div class="item-block-info">
+                                <div class="item-block-img">
+                                    <img src="/img/asus.jpg" />
+                                </div>
+                                <div class="item-block-desc">
+                                    <p><strong>Заказ</strong> №123456789</p>
+                                    <p><strong>Итого:</strong> 43000р</p>
+                                </div>
+                            </div>
+                            <div class="price-block">
+                                <button>Детали заказа</button>
+                                <button>Повторить заказ</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-block">
+                            <div class="item-block-info">
+                                <div class="item-block-img">
+                                    <img src="/img/asus.jpg" />
+                                </div>
+                                <div class="item-block-desc">
+                                    <p><strong>Заказ</strong> №123456789</p>
+                                    <p><strong>Итого:</strong> 43000р</p>
+                                </div>
+                            </div>
+                            <div class="price-block">
+                                <button>Детали заказа</button>
+                                <button>Повторить заказ</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+<script>
+    const backetTab = document.getElementById("backet");
+    const favTab = document.getElementById("fav");
+    const historyTab = document.getElementById("history");
+
+    const divBacket = document.getElementById("backet-block");
+    const divFav = document.getElementById("fav-block");
+    const divHistory = document.getElementById("history-block");
+
+    divBacket.style.display = "block";
+
+    backetTab.addEventListener("click", () => {
+        divBacket.style.display = "block";
+        divFav.style.display = "none";
+        divHistory.style.display = "none";
+        backetTab.classList.add("active");
+        backetTab.classList.remove("inactive");
+        favTab.classList.add("inactive");
+        favTab.classList.remove("active");
+        historyTab.classList.add("inactive");
+        historyTab.classList.remove("active");
+    });
+
+    favTab.addEventListener("click", () => {
+        divFav.style.display = "block";
+        divBacket.style.display = "none";
+        divHistory.style.display = "none";
+        favTab.classList.add("active");
+        favTab.classList.remove("inactive");
+        backetTab.classList.add("inactive");
+        backetTab.classList.remove("active");
+        historyTab.classList.add("inactive");
+        historyTab.classList.remove("active");
+    });
+
+    historyTab.addEventListener("click", () => {
+        divHistory.style.display = "block";
+        divBacket.style.display = "none";
+        divFav.style.display = "none";
+        historyTab.classList.add("active");
+        historyTab.classList.remove("inactive");
+        backetTab.classList.add("inactive");
+        backetTab.classList.remove("active");
+        favTab.classList.add("inactive");
+        favTab.classList.remove("active");
+    });
+</script>
+    
