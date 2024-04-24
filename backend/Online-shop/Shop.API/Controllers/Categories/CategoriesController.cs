@@ -27,5 +27,15 @@ namespace Shop.API.Controllers.Categories
             var result = await _mediator.Send(request, cancellationToken);
             return result.AsActionResult();
         }
+
+        [HttpPost(Routes.Items.Categories.CreateCategory)]
+        [ProducesResponseType(type: typeof(CategoriesResponseDto), statusCode: StatusCodes.Status200OK)]
+        public async Task<IActionResult> CreateCategoryAsync(
+            [FromForm] AddCategory request,
+            CancellationToken cancellationToken)
+        {
+            var result = await _mediator.Send(request, cancellationToken);
+            return result.AsActionResult();
+        }
     }
 }

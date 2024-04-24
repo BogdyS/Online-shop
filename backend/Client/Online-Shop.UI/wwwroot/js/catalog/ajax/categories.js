@@ -1,34 +1,31 @@
 document.addEventListener("DOMContentLoaded", async function () {
     let items = await fetchCatalogData();
     insertCatalogInfo(items);
-    hasMorePages = hasMoreItems(items);
 });
 
 async function fetchCatalogData() {
     try {
-        let url = `${apiOptions.baseUrl}items/list`
+        let url = `${apiOptions.baseUrl}items/categories/list`
 
-        
         const response = await fetch(url);
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
         let jsonResponse = await response.json();
-        page = jsonResponse.paginationContext.page + 1;
         return jsonResponse;
     } catch (error) {
         console.error('Error fetching catalog data:', error);
     }
 }
 
-function insertCatalogInfo(catalogData, isUpdate) {
+function insertCatalogInfo(catalogData) {
     const productsList = document.getElementById("catalogItems")
 
     const chunkSize = 3;
     let rows = [];
-    for (let i = 0; i < catalogData.items.length; i += chunkSize) {
-        let chunk = catalogData.items.slice(i, i + chunkSize);
+    for (let i = 0; i < catalogData.length; i += chunkSize) {
+        let chunk = catalogData.slice(i, i + chunkSize);
         rows.push(chunk)
     }
 
@@ -50,11 +47,6 @@ function insertCatalogInfo(catalogData, isUpdate) {
         rowHTML += `</div>`
         innerHTML += rowHTML
     }
-    if (isUpdate) {
-        productsList.innerHTML += innerHTML;
-    }
-    else {
         productsList.innerHTML = innerHTML;
-    }
 
 }

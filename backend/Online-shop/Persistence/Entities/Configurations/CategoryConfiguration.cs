@@ -12,6 +12,10 @@ namespace Persistence.Entities.Configurations
                .IsRequired(true)
                .HasMaxLength(ItemSpecification.CategoryNameMaxLength);
 
+            builder.Property(x => x.FileKey)
+               .IsRequired(false)
+               .HasMaxLength(200);
+
             builder.HasMany(x => x.Items)
                 .WithOne(x => x.Category)
                 .HasForeignKey(x => x.CategoryId)

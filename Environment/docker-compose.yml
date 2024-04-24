@@ -55,7 +55,7 @@ services:
 
   items_service:
     container_name: items_service
-    image: bogdys/bachelor-degree-work-items-service:v1.4
+    image: bogdys/bachelor-degree-work-items-service:v1.4.1
     restart: always
     depends_on:
       - db_items_course

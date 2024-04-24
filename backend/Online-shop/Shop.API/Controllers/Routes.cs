@@ -16,6 +16,7 @@
             public static class Categories
             {
                 public const string GetCategories = BaseApi + "categories/list";
+                public const string CreateCategory = BaseApi + "categories";
             }
         }
     }
